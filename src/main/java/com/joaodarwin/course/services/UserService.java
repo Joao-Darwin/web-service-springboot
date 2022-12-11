@@ -13,6 +13,8 @@ import com.joaodarwin.course.repositories.UserRepository;
 import com.joaodarwin.course.services.exceptions.DatabaseException;
 import com.joaodarwin.course.services.exceptions.ResourceNotFoundException;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class UserService {
 	
@@ -43,9 +45,13 @@ public class UserService {
 	}
 	
 	public User update(Long id, User user) {
-		User entity = userRepository.getReferenceById(id);
-		updateDate(entity, user);
-		return userRepository.save(entity);
+		try {
+			User entity = userRepository.getReferenceById(id);
+			updateDate(entity, user);
+			return userRepository.save(entity);
+		} catch(EntityNotFoundException e) {
+			throw new ResourceNotFoundException(id);
+		}
 	}
 	
 	private void updateDate(User entity, User user) {
