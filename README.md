@@ -29,7 +29,7 @@ O web service consiste no back-end de uma serviço web de aplicação um e-comme
 # Como executar o projeto
 
 ## Back end
-Pré-requisitos: Java 17
+Pré-requisitos: Java 17 e Spring Boot 3.0
 
 ```bash
 # clonar repositório
