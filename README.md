@@ -31,20 +31,25 @@ O web service consiste no back-end de uma serviço web de aplicação um e-comme
 ## Back end
 Pré-requisitos: Java 17 e Spring Boot 3.0
 
+### Clonar repositório
 ```bash
-# clonar repositório
 git clone https://github.com/Joao-Darwin/web-service-springboot webServiceSpring
+```
 
-# entrar na pasta do projeto
+### Entrar na pasta do projeto
+```bash
 cd webServiceSpring
-
-# instalar o Maven
+```
+### Instalar o Maven
+```bash
 sudo apt-get install maven
-
-# instalar depedências do projeto
+```
+### Instalar depedências do projeto
+```bash
 sudo mvn clean install
-
-# executar o projeto
+```
+### Executar o projeto
+```bash
 mvn spring-boot:run
 ```
 
